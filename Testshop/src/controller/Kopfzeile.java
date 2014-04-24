@@ -1,4 +1,4 @@
-package servlets;
+package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,16 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Hauptseite
+ * Servlet implementation class Kopfzeile
  */
-@WebServlet("/Hauptseite")
-public class Hauptseite extends HttpServlet {
+@WebServlet("/Kopfzeile")
+public class Kopfzeile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Hauptseite() {
+    public Kopfzeile() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,19 +29,25 @@ public class Hauptseite extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Einbindung der Kopfzeile
-		RequestDispatcher rd; 
-		rd = getServletContext().getRequestDispatcher("/Kopfzeile"); 
-		rd.include(request, response); 
 		
-		// Content der Hauptseite
+		// Content der Kopfzeile
 		response.setContentType("text/html"); 
 		PrintWriter out = response.getWriter(); 
-		out.println("Hauptseite"); 
-		
-		// Einbindung der Fusszeile
-		rd = getServletContext().getRequestDispatcher("/Fusszeile"); 
+		// Tabellengenerierung
+		out.println("<table>\n<tr>\n<td>");
+		// Content Kopfzeile
+		out.println("Kopfzeile");
+		// Tabellengenerierung
+		out.println("</td>\n</tr>\n<tr>\n<td>");
+				
+		// Einbindung der Navigation
+		RequestDispatcher rd; 
+		rd = getServletContext().getRequestDispatcher("/Navigation"); 
 		rd.include(request, response); 
+		
+		// Content der Kopfzeile
+		out.println("</td>\n<td>");
+		 
 	}
 
 	/**

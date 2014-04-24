@@ -1,4 +1,4 @@
-package servlets;
+package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Fusszeile
+ * Servlet implementation class Navigation
  */
-@WebServlet("/Fusszeile")
-public class Fusszeile extends HttpServlet {
+@WebServlet("/Navigation")
+public class Navigation extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Fusszeile() {
+    public Navigation() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,13 +28,10 @@ public class Fusszeile extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Content der Kopfzeile
-				response.setContentType("text/html"); 
-				PrintWriter out = response.getWriter(); 
-				out.println("</td>\n</tr>\n<tr>\n<td>");
-				out.println("Fusszeile");
-				out.println("</td>\n</tr>\n</table>");
-
+		// Content der Hauptseite
+		response.setContentType("text/html"); 
+		PrintWriter out = response.getWriter(); 
+		out.println("Navigation"); 
 	}
 
 	/**
