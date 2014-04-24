@@ -14,13 +14,13 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class Kopfzeile
  */
 @WebServlet("/Kopfzeile")
-public class Kopfzeile extends HttpServlet {
+public class KopfbereichController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Kopfzeile() {
+    public KopfbereichController() {
         super();
         // TODO Auto-generated constructor stub
     }
